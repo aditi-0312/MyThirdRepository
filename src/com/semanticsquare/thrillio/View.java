@@ -1,5 +1,7 @@
 package com.semanticsquare.thrillio;
 
+import java.util.List;
+
 import com.semanticsquare.thrillio.constants.UserType;
 import com.semanticsquare.thrillio.controllers.BookmarkController;
 import com.semanticsquare.thrillio.controllers.KidFriendlyStatus;
@@ -8,14 +10,14 @@ import com.semanticsquare.thrillio.entities.User;
 import com.semanticsquare.thrillio.partner.Shareable;
 
 public class View {
-	public static void browse(User user, Bookmark[][] bookmarks) {
+	public static void browse(User user, List<List<Bookmark>> bookmarks) {
 		System.out.println("\n" + user.getEmail() + "is browsing");
 		int bookmarkCount = 0;
 
-		for (Bookmark[] bookmarkList : bookmarks) {
+		for (List<Bookmark> bookmarkList : bookmarks) {
 			for (Bookmark bookmark : bookmarkList) {
 				// Bookmarking!!
-				if (bookmarkCount < DataStore.USER_BOOKMARK_LIMIT) {
+				//if (bookmarkCount < DataStore.USER_BOOKMARK_LIMIT) {
 					boolean isBookmarked = getBookmarkDecision(bookmark);
 					if (isBookmarked) {
 						bookmarkCount++;
@@ -24,7 +26,7 @@ public class View {
 
 						System.out.println("New Item Bookmarked -- " + bookmark);
 					}
-				}
+				//}
 
 				
 
