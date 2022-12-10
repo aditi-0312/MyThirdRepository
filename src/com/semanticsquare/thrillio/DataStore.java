@@ -3,6 +3,7 @@ package com.semanticsquare.thrillio;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.semanticsquare.thrillio.constants.BookGenre;
 import com.semanticsquare.thrillio.constants.Gender;
 import com.semanticsquare.thrillio.entities.Bookmark;
 import com.semanticsquare.thrillio.entities.User;
@@ -41,7 +42,7 @@ public class DataStore {
     	for (String row : data) {
     		String[] values = row.split("\t");
     		
-    		int gender = Gender.MALE;
+    		Gender gender = Gender.MALE;
     		if (values[5].equals("f")) {
     			gender = Gender.FEMALE;
     		} else if (values[5].equals("t")) {
@@ -89,7 +90,7 @@ public class DataStore {
     	for (String row : data) {
     		String[] values = row.split("\t");
     		String[] authors = values[4].split(",");
-    		Bookmark bookmark = BookmarkManager.getInstance().createBook(Long.parseLong(values[0]), values[1], Integer.parseInt(values[2]), values[3], authors, values[5], Double.parseDouble(values[6])/*, values[7]*/);
+    		Bookmark bookmark = BookmarkManager.getInstance().createBook(Long.parseLong(values[0]), values[1], Integer.parseInt(values[2]), values[3], authors, BookGenre.valueOf((values)[5]), Double.parseDouble(values[6])/*, values[7]*/);
     		bookmarkList.add(bookmark);
     	}
     	bookmarks.add(bookmarkList);
