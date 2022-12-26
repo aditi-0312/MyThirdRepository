@@ -13,7 +13,7 @@ public class BookmarkController {
 	public void saveUserBookmark(User user, Bookmark bookmark) {
 		BookmarkManager.getInstance().saveUserBookmark(user, bookmark);
 	}
-	public void setKidFriendlyStatus(User user, String kidFriendlyStatus, Bookmark bookmark) {
+	public void setKidFriendlyStatus(User user, KidFriendlyStatus kidFriendlyStatus, Bookmark bookmark) {
 		BookmarkManager.getInstance().setKidFriendlyStatus(user,kidFriendlyStatus, bookmark);
 		
 	}

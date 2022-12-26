@@ -40,8 +40,8 @@ public abstract class Bookmark {
 		return kidFriendlyStatus;
 	}
 
-	public void setKidFriendlyStatus(String kidFriendlyStatus) {
-		this.kidFriendlyStatus = kidFriendlyStatus;
+	public void setKidFriendlyStatus(KidFriendlyStatus kidFriendlyStatus2) {
+		this.kidFriendlyStatus = kidFriendlyStatus2;
 	}
 
 	public User getKidFriendlyMarkedBy() {
